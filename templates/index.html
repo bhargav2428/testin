@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Instagram Video Downloader</title>
+ </head>
+ <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #452ef5;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #694ffa;
+            color: #151515;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #563cd5;
+        }
+
+
+ </style>
+ <body>
+     <h1>Instagram Video Downloader</h1>
+     <form method="POST">
+         <label for="post_url">Enter Instagram Post URL:</label>
+         <input type="text" name="post_url" id="post_url" required>
+         <button type="submit">Download</button>
+     </form>
+     {% with messages = get_flashed_messages() %}
+         {% if messages %}
+             <ul class="messages">
+                 {% for message in messages %}
+                     <li class="alert alert-{{ message[1] }}">{{ message[0] }}</li>
+                 {% endfor %}
+             </ul>
+         {% endif %}
+     {% endwith %}
+ </body>
+ </html>
